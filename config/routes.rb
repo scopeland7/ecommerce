@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'cart/add_to_cart'
+
+  get 'cart/view_order'
+
+  get 'cart/checkout'
+
+  resources :orders
+  resources :line_items
   devise_for :users
 
   root 'storefront#all_items'

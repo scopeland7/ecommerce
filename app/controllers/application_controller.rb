@@ -5,10 +5,19 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
 
-  before_filter :categories
+  before_filter :categories, :brand
+
+  def brand
+  	@brands = Product.pluck(:brand).sort.uniq!
+  	if @brands == nil
+  		@brands = Product.pluck(:brand).sort
+  	end
+  end
 
   def categories
-  	@categories = Category.all
+  	@categories = Category.order(:name).uniq!
   end
+
+
 
 end
