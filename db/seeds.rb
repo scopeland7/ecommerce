@@ -11,7 +11,7 @@ categories = Category.create([{ name: 'Computers'},
  {name: 'Smart Phones'},
  {name: 'Stereos'},
  {name: 'Speakers'},
- {name: 'Consoles'},
+ {name: 'Gaming Consoles'},
  {name: 'Video Games'},
  {name: 'Gaming Accessories'},
  {name: 'Other'} 
