@@ -1,0 +1,7 @@
+<p>
+  <%= form_tag add_to_cart_path do %>
+    <%= hidden_field_tag :product_id, product.id %>
+    <%= number_field_tag :quantity, nil, placeholder: "How many would you like to buy?" %>
+    <%= submit_tag "Buy It Now!", class: 'btn btn-success' %>
+  <% end %>
+</p>

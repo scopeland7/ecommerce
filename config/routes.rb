@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  post "add_to_cart" => 'cart/add_to_cart'
+  post "add_to_cart" => 'cart#add_to_cart'
 
-  get "view_order" => 'cart/view_order'
+  get "view_order" => 'cart#view_order'
 
-  post "checkout" => 'cart/checkout'
+  get "checkout" => 'cart#checkout'
+
+  # post "checkout" => 'cart#checkout'
 
   resources :orders
   resources :line_items

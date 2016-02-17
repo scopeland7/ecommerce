@@ -1,2 +1,19 @@
-<h1>Cart#checkout</h1>
-<p>Find me in app/views/cart/checkout.html.erb</p>
+<% if @order.grand_total == 0 %>
+	<h2>You cheapskate! Seriously, buy something!</h2>
+<% else %>
+
+
+	<h2>Thanks for giving me your money!</h2>
+	<p>Let's review what you purchased: </p>
+
+	<% @order.order_items.each do |k,v| %>
+		<ul>
+			<li><%= Product.find(k).name %>, <%= v %></li>
+		</ul>
+	<% end %>
+
+	<p>
+		<strong>Order Total: </strong> <%= number_to_currency @order.grand_total %>
+	</p>
+
+<% end %>
